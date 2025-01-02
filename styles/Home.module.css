@@ -1,0 +1,216 @@
+/* Base styles for both themes */
+/* Header Section */
+.header {
+    display: flex;
+    justify-content: space-between; /* Spread out the elements */
+    align-items: center; /* Align items vertically centered */
+    padding: 20px;
+    background: var(--card-bg);
+    color: var(--text-color);
+  }
+  
+  .header h1 {
+    font-size: 2rem;
+    line-height: 1.5;
+  }
+  
+  .themeToggleBtn {
+    padding: 10px 20px;
+    border: none;
+    background: var(--button-bg);
+    color: var(--button-color);
+    cursor: pointer;
+    border-radius: 5px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  .themeToggleBtn:hover {
+    background: var(--button-bg);
+  }
+  
+:root {
+    --background-color: #ffffff;
+    --text-color: #000000;
+    --card-bg: #f8f9fa;
+    --button-bg: #007bff;
+    --button-color: #ffffff;
+  }
+  
+  .darkTheme {
+    --background-color: #121212;
+    --text-color: #ffffff;
+    --card-bg: #1e1e1e; /* Darker background for cards in dark mode */
+    --button-bg: #4caf50;
+    --button-color: #000000;
+  }
+  
+  .lightTheme {
+    --background-color: #ffffff;
+    --text-color: #000000;
+    --card-bg: #f8f9fa; /* Lighter background for cards in light mode */
+    --button-bg: #007bff;
+    --button-color: #ffffff;
+  }
+  
+  /* Hero Section */
+  /* Hero Section */
+.hero {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    height: 60vh;
+    background: url('/hero_page.png') no-repeat center center;
+    background-size: cover;
+    color: var(--text-color);
+    padding: 20px;
+    position: relative;
+    overflow: hidden;
+  }
+  
+  .hero h2 {
+    font-size: 3rem;
+    font-weight: bold;
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
+    color: var(--text-color);
+    margin-bottom: 20px;
+    animation: popUp 1s ease-out;
+  }
+  
+  .hero p {
+    font-size: 1.2rem;
+    color: var(--text-color);
+    margin-bottom: 30px;
+    animation: popUp 1.5s ease-out;
+  }
+  
+  /* Pop-up Animation */
+  @keyframes popUp {
+    0% {
+      opacity: 0;
+      transform: translateY(30px);
+    }
+    100% {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+  
+  /* Sign Up Button Styles */
+  .signUpBtn {
+    padding: 15px 30px;
+    font-size: 1.2rem;
+    background-color: var(--button-bg);
+    color: var(--button-color);
+    border: none;
+    border-radius: 25px;
+    cursor: pointer;
+    text-transform: uppercase;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+  }
+  
+  .signUpBtn:hover {
+    background-color: var(--button-hover-bg);
+    transform: translateY(-5px);
+  }
+  
+  /* Add drag effect on text */
+  .hero h2:hover {
+    cursor: grab;
+    animation: none; /* Remove initial animation on hover */
+  }
+  
+  .hero h2:active {
+    cursor: grabbing;
+    animation: popUp 1s ease-out;
+    transform: scale(1.1); /* Slightly increase size when grabbed */
+  }
+  
+  
+  /* Features Section */
+  .features {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    background: var(--background-color);
+    color: var(--text-color);
+    padding: 40px;
+    position: relative;
+    top: 0;
+    z-index: 10;
+    transition: background-color 0.3s ease;
+  }
+  
+  /* Feature Card Styles */
+  /* General Feature Card Styles */
+.featureCard {
+    background: var(--card-bg);
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    width: 300px;
+    height: 400px;
+    text-align: center;
+    opacity: 0.5; /* Start hidden */
+    transform: translateY(-30px); /* Initially positioned down */
+    transition: opacity 0.5s ease, transform 0.5s ease, box-shadow 0.3s ease;
+  }
+  
+  /* Background for Appointment Scheduling */
+  .appointmentCard {
+    background-image: url('/images/appointment-bg.jpg'); /* Set the image URL */
+    background-size: cover;
+    background-position: center;
+  }
+  
+  /* Background for Patient Records */
+  .recordsCard {
+    background-image: url('/images/records-bg.jpg'); /* Set the image URL */
+    background-size: cover;
+    background-position: center;
+  }
+  
+  /* Background for Staff Management */
+  .staffCard {
+    background-image: url('/images/staff-bg.jpg'); /* Set the image URL */
+    background-size: cover;
+    background-position: center;
+  }
+  
+  .featureCard.show {
+    opacity: 1;
+    transform: translateY(0); /* Move to normal position */
+  }
+  
+  /* Hover effect: make the card grow slightly and add shadow */
+  .featureCard:hover {
+    transform: translateY(0) scale(1.05); /* Slightly grow the card */
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2); /* Add more shadow when hovered */
+    cursor: pointer; /* Show pointer cursor to indicate interactivity */
+  }
+  
+  
+  /* About Us Section */
+  .aboutUs {
+    padding: 40px;
+    background: var(--background-color);
+    color: var(--text-color);
+    text-align: center;
+  }
+  
+  .aboutUs h2 {
+    font-size: 2rem;
+    font-weight: bold;
+    margin-bottom: 20px;
+  }
+  
+  .aboutUs p {
+    font-size: 1.2rem;
+    line-height: 1.6;
+    margin-bottom: 20px;
+  }
+  
