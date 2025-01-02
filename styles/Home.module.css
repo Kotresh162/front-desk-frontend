@@ -150,19 +150,20 @@
 .featureCard {
     background: var(--card-bg);
     padding: 20px;
+    
     border-radius: 10px;
     box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
     width: 300px;
     height: 400px;
     text-align: center;
-    opacity: 0.5; /* Start hidden */
+    opacity: 1; /* Start hidden */
     transform: translateY(-30px); /* Initially positioned down */
     transition: opacity 0.5s ease, transform 0.5s ease, box-shadow 0.3s ease;
   }
   
   /* Background for Appointment Scheduling */
   .appointmentCard {
-    background-image: url('/images/appointment-bg.jpg'); /* Set the image URL */
+    background-image: url('/appointment_bg.jpg'); /* Set the image URL */
     background-size: cover;
     background-position: center;
   }
@@ -176,7 +177,7 @@
   
   /* Background for Staff Management */
   .staffCard {
-    background-image: url('/images/staff-bg.jpg'); /* Set the image URL */
+    background-image: url('/doctor_avlb.png'); /* Set the image URL */
     background-size: cover;
     background-position: center;
   }
@@ -212,5 +213,32 @@
     font-size: 1.2rem;
     line-height: 1.6;
     margin-bottom: 20px;
+  }
+  
+  .page {
+    padding: 2rem;
+    background-color: var(--background);
+    color: var(--text);
+  }
+  
+  .header {
+    text-align: center;
+    margin-bottom: 2rem;
+  }
+  
+  .content {
+    max-width: 800px;
+    margin: 0 auto;
+    text-align: center;
+  }
+  
+  :root {
+    --background: #f9f9f9;
+    --text: #333;
+  }
+  
+  .darkTheme {
+    --background: #333;
+    --text: #f9f9f9;
   }
   

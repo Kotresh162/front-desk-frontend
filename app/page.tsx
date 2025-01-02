@@ -1,6 +1,7 @@
 "use client"; // Enables client-side rendering
 
 import { useState, useEffect } from "react";
+import { useRouter } from "next/navigation"; // Import useRouter from Next.js
 import { FaMoon, FaSun } from "react-icons/fa"; // Import icons from react-icons
 import styles from "../styles/Home.module.css"; // Import the CSS module
 
@@ -8,6 +9,7 @@ export default function Home() {
   const [isDarkMode, setIsDarkMode] = useState(false);
   const [scrollingUp, setScrollingUp] = useState(false);
   const [lastScrollY, setLastScrollY] = useState(0);
+  const router = useRouter(); // Initialize useRouter
 
   const toggleTheme = () => {
     setIsDarkMode(!isDarkMode);
@@ -30,6 +32,11 @@ export default function Home() {
     };
   }, [lastScrollY]);
 
+  // Navigation handlers
+  const navigateTo = (path:string) => {
+    router.push(path);
+  };
+
   return (
     <div className={isDarkMode ? styles.darkTheme : styles.lightTheme}>
       <header className={styles.header}>
@@ -49,7 +56,6 @@ export default function Home() {
       </header>
 
       {/* Hero Section */}
-      {/* Hero Section */}
       <section className={styles.hero}>
         <h2>Welcome to Our Hospital Management System</h2>
         <p>Streamline your healthcare services efficiently.</p>
@@ -57,18 +63,27 @@ export default function Home() {
 
       {/* Features Section */}
       <section className={styles.features}>
-      <div className={`${styles.featureCard} ${scrollingUp ? styles.show : ""} ${styles.staffCard}`}>
-        <h3>Staff Management</h3>
-        <p>Organize your hospital staff easily.</p>
-      </div>
-      <div className={`${styles.featureCard} ${scrollingUp ? styles.show : ""} ${styles.appointmentCard}`}>
-        <h3>Appointment Scheduling</h3>
-        <p>Efficient scheduling for patients.</p>
-      </div>
-      <div className={`${styles.featureCard} ${scrollingUp ? styles.show : ""} ${styles.recordsCard}`}>
-        <h3>Patient Records</h3>
-        <p>Access records securely anytime.</p>
-      </div>
+        <div
+          className={`${styles.featureCard} ${scrollingUp ? styles.show : ""} ${styles.staffCard}`}
+          onClick={() => navigateTo("/doctor")}
+        >
+          <h3>DOCTOR Management</h3>
+          <p>Organize your hospital staff easily.</p>
+        </div>
+        <div
+          className={`${styles.featureCard} ${scrollingUp ? styles.show : ""} ${styles.appointmentCard}`}
+          onClick={() => navigateTo("/appointments")}
+        >
+          <h3>Appointment Scheduling</h3>
+          <p>Efficient scheduling for patients.</p>
+        </div>
+        <div
+          className={`${styles.featureCard} ${scrollingUp ? styles.show : ""} ${styles.recordsCard}`}
+          onClick={() => navigateTo("/records")}
+        >
+          <h3>Patient Records</h3>
+          <p>Access records securely anytime.</p>
+        </div>
       </section>
 
       {/* About Us Section */}
