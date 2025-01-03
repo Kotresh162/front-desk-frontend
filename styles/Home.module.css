@@ -170,7 +170,7 @@
   
   /* Background for Patient Records */
   .recordsCard {
-    background-image: url('/images/records-bg.jpg'); /* Set the image URL */
+    background-image: url('/recptionsist.jpg'); /* Set the image URL */
     background-size: cover;
     background-position: center;
   }
