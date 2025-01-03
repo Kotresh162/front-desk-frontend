@@ -18,6 +18,7 @@ interface Doctor {
 export default function DoctorManagement() {
   // State for doctors list
   const [doctors, setDoctors] = useState<Doctor[]>([]);
+
   // State for new doctor form
   const [newDoctor, setNewDoctor] = useState<Doctor>({
     id: 0,
@@ -29,8 +30,10 @@ export default function DoctorManagement() {
     location: "",
     availability: "free",
   });
+
   // State for form visibility
   const [showForm, setShowForm] = useState<boolean>(false);
+
   // State for error handling
   const [error, setError] = useState<string>("");
 
