@@ -45,7 +45,7 @@ export default function DoctorManagement() {
   // Fetch doctors from the backend
   const fetchDoctors = async () => {
     try {
-      const response = await axios.get("http://localhost:5000/doctors");
+      const response = await axios.get("https://front-desk-system.onrender.com/doctors");
       setDoctors(response.data);
     } catch (error) {
       console.error("Error fetching doctors:", error);
@@ -95,7 +95,7 @@ export default function DoctorManagement() {
     }
 
     try {
-      const response = await axios.post("http://localhost:5000/doctors", newDoctor);
+      const response = await axios.post("https://front-desk-system.onrender.com/doctors", newDoctor);
       setDoctors([...doctors, response.data]);
       setNewDoctor({
         id: 0,
@@ -123,7 +123,7 @@ export default function DoctorManagement() {
   // Handle delete doctor
   const handleDeleteDoctor = async (id: number) => {
     try {
-      await axios.delete(`http://localhost:5000/doctors/${id}`);
+      await axios.delete(`https://front-desk-system.onrender.com/doctors/${id}`);
       setDoctors(doctors.filter((doctor) => doctor.id !== id));
     } catch (error) {
       console.error("Error deleting doctor:", error);

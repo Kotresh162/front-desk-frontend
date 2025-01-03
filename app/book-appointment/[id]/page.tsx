@@ -24,7 +24,7 @@ export default function BookAppointment() {
     const fetchPatient = async () => {
       try {
         if (patientId) {
-          const patientResponse = await axios.get(`http://localhost:5000/patients/${patientId}`);
+          const patientResponse = await axios.get(`https://front-desk-system.onrender.com/patients/${patientId}`);
           setPatient(patientResponse.data);
         } else {
           setError("Patient ID is missing in the URL.");

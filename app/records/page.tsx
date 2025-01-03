@@ -33,7 +33,7 @@ export default function PatientManagement() {
 
   const fetchPatients = async () => {
     try {
-      const response = await axios.get("http://localhost:5000/patients");
+      const response = await axios.get("https://front-desk-system.onrender.com/patients");
       setPatients(response.data);
     } catch (error) {
       console.error("Error fetching patients:", error);
@@ -56,7 +56,7 @@ export default function PatientManagement() {
     }
 
     try {
-      const response = await axios.post("http://localhost:5000/patients", newPatient);
+      const response = await axios.post("https://front-desk-system.onrender.com/patients", newPatient);
       setPatients([...patients, response.data]);
       setNewPatient({
         id: 0,
@@ -80,7 +80,7 @@ export default function PatientManagement() {
 
   const handleDeletePatient = async (id: number) => {
     try {
-      await axios.delete(`http://localhost:5000/patients/${id}`);
+      await axios.delete(`https://front-desk-system.onrender.com/patients/${id}`);
       setPatients(patients.filter((patient) => patient.id !== id));
     } catch (error) {
       console.error("Error deleting patient:", error);
