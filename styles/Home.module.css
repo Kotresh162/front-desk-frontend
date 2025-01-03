@@ -232,10 +232,6 @@
     text-align: center;
   }
   
-  :root {
-    --background: #f9f9f9;
-    --text: #333;
-  }
   
   .darkTheme {
     --background: #333;
