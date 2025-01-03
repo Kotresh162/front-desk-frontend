@@ -30,21 +30,21 @@
     background: var(--button-bg);
   }
   
-:root {
+  .localRoot {
     --background-color: #ffffff;
     --text-color: #000000;
     --card-bg: #f8f9fa;
     --button-bg: #007bff;
     --button-color: #ffffff;
-  }
-  
-  .darkTheme {
+}
+
+.darkTheme {
     --background-color: #121212;
     --text-color: #ffffff;
-    --card-bg: #1e1e1e; /* Darker background for cards in dark mode */
+    --card-bg: #1e1e1e;
     --button-bg: #4caf50;
     --button-color: #000000;
-  }
+}
   
   .lightTheme {
     --background-color: #ffffff;

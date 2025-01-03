@@ -4,6 +4,7 @@ import { useState, useEffect } from "react";
 import { useRouter } from "next/navigation"; // Import useRouter from Next.js
 import { FaMoon, FaSun } from "react-icons/fa"; // Import icons from react-icons
 import styles from "../styles/Home.module.css"; // Import the CSS module
+import "../styles/global.module.css";
 
 export default function Home() {
   const [isDarkMode, setIsDarkMode] = useState(false);
